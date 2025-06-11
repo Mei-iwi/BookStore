@@ -1,0 +1,245 @@
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 3000;
+}
+body {
+  background-color: whitesmoke;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  #buttonControll {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    z-index: 100;
+  }
+  #buttonControll button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  #buttonControll img {
+    width: 100%;
+  }
+  #RouteLeft,
+  #RouteRight {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  #RouteLeft {
+    left: 0px;
+  }
+
+  #RouteRight {
+    right: 0px;
+  }
+  #btnChangeLeft,
+  #btnChangeRight {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (min-width: 768px) {
+  #buttonControll {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    z-index: 100;
+  }
+  #buttonControll button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    padding: 0;
+  }
+  #buttonControll img {
+    width: 100%;
+  }
+  #RouteLeft,
+  #RouteRight {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  #RouteLeft {
+    left: 5%;
+  }
+
+  #RouteRight {
+    right: 5px;
+  }
+  #btnChangeLeft,
+  #btnChangeRight {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}
+@media (min-width: 992px) {
+  #buttonControll {
+    position: fixed;
+    top: 0%;
+    left: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  #RouteLeft,
+  #RouteRight {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  #RouteLeft {
+    left: 30px;
+  }
+
+  #RouteRight {
+    right: 30px;
+  }
+  #btnChangeLeft,
+  #btnChangeRight {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  #buttonControll button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  #buttonControll img {
+    width: 100%;
+  }
+}
+.reading-mode {
+  background-color: #f4ecd8;
+  color: #333;
+  font-size: 1.25rem;
+  font-family: "Arial", serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+.focus {
+  display: none;
+}
+.flag {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+#container {
+  position: relative;
+}
+.marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+#content {
+  padding: 10px;
+}
+button {
+  cursor: pointer;
+}
+.formadd {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  border: blue solid 2px;
+}
+#cancel {
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  background-color: white;
+  position: relative;
+  left: 93%;
+  top: -10px;
+}
+.formadd span {
+  cursor: pointer;
+}
+#cancel img {
+  width: 100%;
+}
+#rating .star {
+  font-size: 50px;
+  padding: 5px;
+}
+#rating .star.selected {
+  color: gold;
+}
+.thanks {
+  border: none;
+  background-color: transparent;
+  color: green;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "UVN Ky Lan", cursive;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.thanks img {
+  width: 100px;
+}
+#formadd2 {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin: auto;
+}
+#formadd2.show {
+  max-height: 1000px;
+  opacity: 1;
+}

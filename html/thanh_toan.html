@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Thanh Toán</title></head
+  ><link rel="stylesheet" href="../css/thanh_toan.css" />
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+  <body>
+    <div class="container">
+      <h2 class="text-center">Thanh Toán</h2>
+      <div class="alert alert-success" id="successMessage">
+        Thanh toán thành công! Thoát khỏi trang sau:
+        <span id="countdown">3</span> giây...
+      </div>
+      <form id="paymentForm">
+        <div class="form-group">
+          <label for="fullName">Họ và Tên</label>
+          <input type="text" class="form-control" id="fullName" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Số Điện Thoại</label>
+          <input type="tel" class="form-control" id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Địa Chỉ Giao Hàng</label>
+          <input type="text" class="form-control" id="address" required />
+        </div>
+        <div class="form-group">
+          <label for="paymentMethod">Phương Thức Thanh Toán</label>
+          <select class="form-control" id="paymentMethod" required>
+            <option value="">Chọn phương thức</option>
+            <option value="creditCard">Thẻ Tín Dụng</option>
+            <option value="cashOnDelivery">Thanh Toán Khi Nhận Hàng</option>
+          </select>
+        </div>
+        <h4>Thông Tin Sản Phẩm</h4>
+        <div id="productList" class="text-left"></div>
+        <div class="text-right">
+          <h5 class="mt-4">
+            Tổng Tiền Cần Thanh Toán: <span id="totalAmount">0 VNĐ</span>
+          </h5>
+          <button type="submit" id="cancel" class="btn btn btn-danger">
+            Hủy
+          </button>
+          <button type="submit" class="btn btn btn-success">
+            Xác Nhận Thanh Toán
+          </button>
+        </div>
+      </form>
+
+      <script src="../bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/thanh_toan.js"></script>
+    </div>
+  </body>
+</html>

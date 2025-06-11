@@ -1,0 +1,41 @@
+#formadd {
+  overflow-y: auto;
+}
+#formadd input {
+  height: 30px;
+}
+#formadd .row {
+  overflow-y: auto;
+}
+#formadd3 {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin: auto;
+}
+#formadd3.show {
+  max-height: 1000px;
+  opacity: 1;
+}
+#formadd3 {
+  overflow-y: auto;
+}
+#formadd3 input {
+  height: 30px;
+}
+#formadd3 .row {
+  overflow-y: auto;
+}
+#close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-top-right-radius: 5px;
+}
+#close img {
+  width: 100%;
+}

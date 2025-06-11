@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng Mua Sách</title>
+    <link rel="stylesheet" href="../css/gio_hang.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Detail.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="position: sticky;top:0px">
+      <a class="navbar-brand" href="#">Giỏ Hàng Sách</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"></button>
+      <!-- > data-target="#navbarNav" gắn id của nơi bạn muốn trỏ đến -->
+        <span style="font-size: 30px;" class="navbar-toggler-icon">🏠</span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Trang Chủ</a> <!--truyền link trang chủ vào-->
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <h1 class="cart-title">Giỏ Hàng Của Bạn</h1>
+      <div class="form-check mb-3">
+        <!--tạo nút chọn tất cả sản phẩm-->
+        <input type="checkbox" id="selectAll" class="form-check-input"  data-index="0"/>
+        <label class="form-check-label" for="selectAll"
+          >Chọn Tất Cả Sản Phẩm</label
+        >
+      </div>
+      <table class="table table-bordered" id="booksTable">
+        <!--tạo phần đầu của bản thông tin giỏ hàng-->
+        <thead class="thead-light">
+          <tr>
+            <th class="text-center">Chọn</th>
+            <th class="text-center">Tên Sản Phẩm</th>
+            <th class="text-center">Loại sản phẩm</th>
+            <th class="text-center">Đơn Giá</th>
+            <th class="text-center">Số Lượng</th>
+            <th class="text-center">Tổng Tiền</th>
+            <th class="text-center">Xóa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu sẽ được thêm vào đây -->
+        </tbody>
+      </table>
+    
+      <div class="d-flex flex-column justify-content-center align-items-end">
+        <div>   
+          <label for="quantity">Số Lượng Đơn Hàng Đã Chọn: </label>
+          <span id="selectedQuantity">0</span></div>
+        <div class="total">Tổng: <span id="totalDisplay">0 VNĐ</span></div>
+        <div>
+          <button class="btn checkout-btn w-100 btn-outline-primary" id="buyNow" >Mua Hàng</button>
+        </div>
+      </div>
+  <h3 class="text-center">LỊCH SỬ ĐẶT HÀNG</h3>
+      <table class="table table-bordered" id="oldTable">
+        <!--tạo phần đầu của bản thông tin giỏ hàng-->
+        <thead class="thead-light">
+          <tr>
+            <th class="text-center">STT</th>
+            <th class="text-center">Tên Sản Phẩm</th>
+            <th class="text-center">Loại sản phẩm</th>
+            <th class="text-center">Đơn Giá</th>
+            <th class="text-center">Số Lượng</th>
+            <th class="text-center">Tổng Tiền</th>
+            <th class="text-center">Ngày đặt</th>
+            <th class="text-center">Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dữ liệu sẽ được thêm vào đây -->
+        </tbody>
+      </table>
+      <!-- Gợi ý các mặt hàng khác -->
+      <h2 class="suggestions-title">Gợi Ý Mặt Hàng Khác</h2>
+         <div class="container-fluid">
+     
+      <div class="container menuRoll">
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/ta.jpeg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/annoi.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/dnt.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/tv1.jpeg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/kt.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/rung.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+        <!-- Sản phẩm gợi ý sẽ được thêm vào đây -->
+    </div>
+    <div class="footer">
+      <p>&copy; 2023 Giỏ Hàng Sách. Tất cả quyền được bảo lưu.</p>
+      <p>Liên hệ: info@example.com</p>
+    </div>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/gio_hang.js"></script>
+  </body>
+</html>

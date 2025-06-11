@@ -1,0 +1,243 @@
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+.btn-secondary.always-hover {
+  background-color: #6c757d;
+  color: #fff;
+  border-color: #6c757d;
+  border-radius: 0px 5px 5px 0px;
+}
+#searchAll::placeholder {
+  font-style: italic;
+  position: relative;
+  left: 10px;
+}
+#searchAll {
+  border-radius: 5px 0px 0px 5px;
+}
+.header-second {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  left: 20px;
+  justify-items: center;
+  align-content: center;
+}
+.hotline {
+  font-weight: bold;
+  font-size: 20px;
+  color: green;
+  position: relative;
+  right: 20px;
+}
+
+
+.Category img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 5px;
+  right: 20px;
+}
+.Category a {
+  display: block;
+  color: black;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  left: 10px;
+}
+.Category a:active {
+  font-weight: bold;
+}
+#basicCarousel {
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+#basicCarousel .carousel-item img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+.newbook {
+  position: relative;
+  top: 15px;
+  margin: 0px 10px;
+  background-color: lightgray;
+}
+.new {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 30px 10px 15px;
+  font-weight: bold;
+  font-size: 20px;
+  width: 35%;
+  position: relative;
+}
+.new::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 10px;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 40px solid #007bff;
+}
+.card-body img {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navbar {
+  z-index: 10000000 !important;
+}
+.carousel-indicators li {
+  width: 7px;
+  height: 7px;
+  border-radius: 100px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  #basicCarousel {
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  #basicCarousel .carousel-item img {
+    height: 200px;
+    width: 80%;
+    object-fit: cover;
+  }
+  .list {
+    position: relative;
+    right: 20px;
+  }
+}
+@media (min-width: 768px) {
+  #basicCarousel {
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  #basicCarousel .carousel-item img {
+    height: 200px;
+    width: 80%;
+    object-fit: cover;
+  }
+  .list {
+    position: relative;
+    right: 20px;
+  }
+}
+@media (min-width: 992px) {
+  #basicCarousel {
+    position: relative;
+    left: -30px;
+  }
+  #card .row {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+footer img {
+  width: 75px;
+  position: relative;
+  padding: 10px 5px;
+  left: 10px;
+}
+footer {
+  position: relative;
+  top: 20px;
+  background-color: black;
+  color: white;
+  width: 98%;
+  margin: auto;
+}
+footer .col-1,
+.col-5 {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+footer .col-6 img {
+  width: 50%;
+  float: right;
+  margin-right: 20px;
+}
+.card {
+  transition: 0.3s all ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform: (0);
+}
+.card:hover {
+  transform: translate3d(-0px, -5px, 20px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+#card {
+  position: relative;
+}
+.card-item {
+  transform: translateY(100%);
+  opacity: 0; 
+  transition: transform 2s ease, opacity 1s ease;
+}
+.card-item-trans {
+  transform: translateY(0);
+  opacity: 1;
+}
+.Category li {
+  transition: 0.3s all ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+    .Category li:hover {
+        /*  transform: translate3d(0px, -1px, 2px);*/
+        box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
+    }
+.hide {
+  transition: 2s all ease;
+  opacity: 1;
+}
+#newTrans {
+  position: relative;
+  opacity: 0.5;
+}
+.trans
+{
+    color:white; 
+}
+.trans:hover {
+ color:red;
+ transform:scale(1.2); 
+ transition:transform 0.3s;
+ box-shadow:0 4px 4px rgb(0, 0, 0,0.6)
+}
+.nut::after{
+    background-color:lightgray; 
+    
+}
+.trasReturn {
+  transition: 1s all ease;
+  left: 0%;
+  transform: translateX(-0%);
+}

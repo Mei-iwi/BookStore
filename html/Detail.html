@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category.css" />
+    <link rel="stylesheet" href="../css/Management.css" />
+    <link rel="stylesheet" href="../css/Detail.css" />
+    <link rel="stylesheet" href="../css/ReadOnline.css" />
+    <title>Detail</title>
+    <style>
+      .info td {
+        background-color: white;
+      }
+      tbody tr:hover td {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <div id="formadd" class="formadd" style="z-index: 10000">
+    <form method="post">
+      <div class="container m-3">
+        <h2 class="text-primary text-center">Thêm vào giỏ hàng ngay</h2>
+        <div
+          class="row w-100 d-flex justify-content-center align-items-center border"
+        >
+          <div
+            class="col-6 col-md-8 col-lg-6 p-3 d-flex align-items-center justify-content-center"
+          >
+            <img class="w-50" id="formpicture" src="../Images/dnt.jpg" alt="" />
+          </div>
+          <div class="col-12 col-md-12 col-lg-6 border p-4 w-100">
+            <h3 id="titleForm">Tên sách:</h3>
+            <h4 id="priceForm">Giá:</h4>
+            <table class="">
+              <tr>
+                <td>
+                  <label for="select">Chọn loại sách </label>
+                </td>
+                <td>
+                  <select id="select" class="rounded">
+                    <option value="book">Sách bản chính</option>
+                    <option value="papper">Sách bản in</option>
+                    <option value="photo">Sách photo</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label for="number">Chọn số lượng </label></td>
+                <td>
+                  <input
+                    class="w-75"
+                    type="number"
+                    name="number"
+                    value="1"
+                    id="number"
+                    min="1"
+                    oninput="updateTotal()"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label for="sum">Tổng tiền </label></td>
+                <td>
+                  <input
+                    class="w-75"
+                    type="text"
+                    name="sum"
+                    id="sum"
+                    readonly
+                  />
+                  VNĐ
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div
+            class="col-12 col-md-12 col-lg-12 align-items-center justify-content-center border text-right p-2"
+          >
+            <button
+              type="button"
+              id="closeButton"
+              onclick="closeForm()"
+              class="btn btn-danger"
+            >
+              Hủy
+            </button>
+            <button type="submit" id="addNow" class="btn btn-success">
+              Thêm vào giỏ hàng
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="formadd3" class="formadd w-50">
+    <h3 class="text-center text-primary">Hơn cả sự tiện lợi với sách online</h3>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-6 text-center">
+        <img class="w-100" src="../Images/qR.png" alt="" /><br />
+        <strong>Thanh toán qua QR</strong>
+      </div>
+      <div
+        class="col-12 col-md-6 col-lg-6 d-flex justify-content-center flex-column"
+      >
+        <button
+          class="btn btn-success mt-4"
+          onclick="alert('Thanh toán thành công')"
+        >
+          Thanh toán qua ngân hàng
+        </button>
+        <button
+          style="background-color: purple; color: #fff"
+          class="btn mt-4"
+          onclick="alert('Thanh toán thành công')"
+        >
+          Thanh toán qua Momo
+        </button>
+        <button
+          class="btn btn-outline-primary mt-4"
+          onclick="alert('Thanh toán thành công')"
+        >
+          Thanh toán trả sau
+        </button>
+      </div>
+      <div class="col-12 col-md-12 col-lg-12 text-right">
+        <button id="close" class="btn btn-danger">Hủy</button>
+        <button id="Borrow" class="btn btn-success w-25">Đọc ngay</button>
+      </div>
+    </div>
+  </div>
+  <body>
+    <header>
+      <div class="header">
+        <div class="headerleft d-flex justify-content-center">
+          <button
+            class="btn btn-primary btnMenu card"
+            type="button"
+            id="dropdownMenuButton"
+            style="width: 50px; height: 50px"
+            onclick="location.href = './Category.html'"
+          >
+            <img src="../Images/returnDetail.png" />
+          </button>
+        </div>
+
+        <div class="center d-flex w-50">
+          <input
+            type="text"
+            name="searchAll"
+            id="searchAll"
+            class="w-100"
+            placeholder="Nhập thông tin cần tìm!"
+          /><button class="btn btn-secondary always-hover" id="searchBooks">
+            <img src="../Images/search.png" alt="" />
+          </button>
+        </div>
+        <div class="headerright">
+          <span>
+            <button
+              class="btn btn-primary card"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              onclick="location.href = './gio_hang.html'"
+            >
+              <img src="../Images/cartWhite.png" alt="" />
+              Giỏ hàng
+            </button>
+          </span>
+          <span id="login"></span>
+        </div>
+      </div>
+      <div class="bg-secondary header-second">
+        <div class="title">Chi tiết sản phẩm</div>
+        <div class="hotline"><img src="../Images/phone.png" />18001515</div>
+      </div>
+    </header>
+    <div class="container-fluid mt-4 border p-4">
+      <div class="row picture">
+        <div
+          class="col-12 col-md-6 col-lg-4 border-right d-flex justify-content-center"
+        >
+          <div class="row">
+            <div
+              class="col-12 col-md-12 col-lg-12 d-flex justify-content-center mb-4"
+            >
+              <img
+                id="bookMain"
+                style="height: 300px; width: 250px"
+                class=""
+                src="../Images/kts.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="d-flex justify-content-center p-2 px-3 col-3 col-md-3 col-lg-3 transBook"
+            >
+              <img class="w-50" id="book1" src="../Images/kts.jpg" alt="" />
+            </div>
+            <div
+              class="d-flex justify-content-center p-2 px-3 col-3 col-md-3 col-lg-3 transBook"
+            >
+              <img class="w-50" id="book2" src="../Images/kts1.jpg" alt="" />
+            </div>
+            <div
+              class="d-flex justify-content-center p-2 px-3 col-3 col-md-3 col-lg-3 transBook"
+            >
+              <img class="w-50" id="book3" src="../Images/kts2.webp" alt="" />
+            </div>
+            <div
+              class="d-flex justify-content-center p-2 px-3 col-3 col-md-3 col-lg-3 transBook"
+            >
+              <img class="w-50" id="book4" src="../Images/kts3.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8">
+          <table class="info">
+            <tr>
+              <td
+                style="font-size: 25px"
+                class="text-center"
+                colspan="2"
+                id="title"
+              ></td>
+            </tr>
+            <tr>
+              <td>Đánh giá</td>
+              <td id="star" style="color: gold"></td>
+            </tr>
+            <tr>
+              <td>Giá:</td>
+              <td id="price"></td>
+            </tr>
+            <tr>
+              <td>Mô tả</td>
+              <td id="describle"></td>
+            </tr>
+            <tr id="quantityChange">
+              <td>Số lượng</td>
+              <td class="quantity">
+                <button class="btn bg-white" id="decrease">-</button
+                ><input
+                  type="text"
+                  name="quantity"
+                  id="quantity"
+                  value="1"
+                  min="1"
+                />
+                <button class="btn bg-white" id="increase">+</button>
+              </td>
+            </tr>
+            <tr class="text-right">
+              <td></td>
+              <td>
+                <button
+                  class="btn btn-outline-primary mr-3"
+                  onclick="onformHtml()"
+                  id="btn1"
+                >
+                  Thêm vào giỏ hàng
+                </button>
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="onform3()"
+                  id="btn2"
+                >
+                  Thuê sách
+                </button>
+                <button class="btn btn-success mr-3" id="btn3">Mua ngay</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h3>
+        <u><em>Chi tiết sản phẩm</em></u>
+      </h3>
+      <p class="container" id="DetailBook">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        Exercitationem, et. Velit non libero illo inventore mollitia explicabo
+        expedita. Dignissimos eligendi nulla dolores harum temporibus ipsa
+        pariatur ut tempore rem quam. Error vel, iure ex rem possimus nostrum,
+        quo tempore fugit quia magni unde animi adipisci officia eos, facilis
+        numquam vitae veritatis? Placeat cupiditate rerum eius quibusdam qui
+        consectetur distinctio expedita? Ullam dolore similique nobis saepe
+        dignissimos ipsum perspiciatis deleniti cum voluptatibus. A commodi quo
+        hic. Maiores sint quos nam temporibus ex, labore vel magni nisi
+        accusantium alias ad, natus quibusdam? Amet doloremque libero quidem,
+        saepe dolores dolore. Corrupti, ex ab quae hic unde fuga optio harum
+        earum excepturi, tempora voluptas sed doloremque enim? Corporis nobis
+        quibusdam a vero molestias ex. Odit molestiae praesentium quia saepe
+        repellendus nobis labore, autem harum a excepturi, perferendis natus
+        dicta expedita sapiente tempora laudantium fugit molestias. Eaque alias
+        nemo beatae nobis, repellendus rerum suscipit minus! Ab quibusdam
+        inventore ipsam magni incidunt dicta expedita? Tenetur dolore, dicta
+        unde doloremque error totam voluptates rerum possimus, architecto vitae
+        numquam dolores perferendis, excepturi quod animi eligendi molestias
+        ducimus at. Consequuntur dignissimos blanditiis neque cumque laboriosam?
+        Aut error dolorum, facere ducimus, porro ipsa minus id adipisci officia
+        totam distinctio officiis non. A rem, molestias excepturi reprehenderit
+        nostrum repudiandae culpa molestiae! Sapiente, aperiam odit. Dicta
+        dignissimos modi adipisci vero maiores deleniti unde labore ab enim
+        deserunt vitae, veniam fugiat, odio, magni cumque! Possimus modi eum
+        nesciunt voluptates voluptatum provident qui aspernatur. Eligendi
+        maiores, labore laboriosam nobis saepe corporis totam eius veniam
+        reprehenderit! Facilis esse, perferendis sapiente vel veritatis nam ut
+        eveniet soluta reprehenderit harum fugit, officia, illo unde deserunt
+        exercitationem ad. Cum ducimus nobis error obcaecati quos hic ipsum
+        consectetur vitae omnis ad eos mollitia, ut cupiditate et, odit
+        temporibus expedita. Neque natus placeat a voluptatibus debitis corporis
+        sint qui excepturi?
+      </p>
+    </div>
+    <div class="container-fluid">
+      <h3>
+        <u>
+          <em>Sản phẩm tương tự</em>
+        </u>
+      </h3>
+      <div class="container menuRoll">
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/ta.jpeg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/annoi.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/dnt.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/tv1.jpeg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/kt.jpg" alt="" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <img class="transBook" src="../Images/rung.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row">
+        <div class="col-2 col-md-2 col-lg-1">
+          <img src="../Images/logo.png" alt="" />
+        </div>
+        <div class="col-4 col-md-6 col-lg-6">
+          <p>Liên hệ với chúng tôi ngay</p>
+          <p>Địa chỉ: 140 Lê Trọng Tấn, phường Tây Thạnh, Tân Phú, TP.HCM</p>
+          <p>Hotline: 180001515</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5">
+          <img src="../Images/ct.png" alt="" />
+        </div>
+      </div>
+    </footer>
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/Management.js"></script>
+    <script src="../js/BookDetail.js"></script>
+    <script src="../js/Detail.js"></script>
+    <script src="../js/ReadOnline.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var user = document.getElementById("login");
+        var userLogin = JSON.parse(localStorage.getItem("userLogin") || "[]");
+
+        if (userLogin.length === 0) {
+          user.innerHTML = `
+          <div class ="d-flex text-white">
+          <div style="border-right: 1px solid white" class="pr-3" onclick="location.href = 'login.html'">
+            Đăng nhập
+          </div>
+          <div class="ml-3" onclick="location.href = 'register.html'">Đăng ký</div>
+          </div>`;
+          document.getElementById("btn1").style.display = "none";
+          document.getElementById("btn2").style.display = "none";
+          document.getElementById("btn3").style.display = "none";
+          document.getElementById("quantityChange").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

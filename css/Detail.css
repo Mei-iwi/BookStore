@@ -1,0 +1,70 @@
+.headerright div {
+  color: white;
+  cursor: pointer;
+}
+.transBook {
+  transition: all ease 0.5s;
+}
+.transBook:hover {
+  transform: scale(1.1);
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+}
+.quantity button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 25px;
+  width: 30px;
+  height: 30px;
+}
+.quantity img {
+  width: 100%;
+}
+.quantity input {
+  width: 10%;
+  height: 30px;
+}
+.menuRoll {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  height: 200px;
+}
+.menuRoll div {
+  padding: 10px;
+}
+.menuRoll img {
+  width: 100px;
+  height: 120px;
+}
+table td:first-child {
+  font-weight: bold;
+  width: 100px;
+}
+.menuRoll {
+  cursor: grab;
+}
+.picture {
+  cursor: pointer;
+}
+#formadd {
+  border: blue 2px solid;
+  border-radius: 5px;
+}
+#formadd3 {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin: auto;
+}
+#formadd3.show {
+  max-height: 1000px;
+  opacity: 1;
+}

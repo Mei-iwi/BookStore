@@ -1,0 +1,293 @@
+body {
+  margin: auto;
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+  z-index: 100000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: blue;
+  padding: 5px 10px;
+}
+.header button {
+  background-color: blue;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .headerright {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  margin-right: 10px;
+}
+.header .headerright a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.headerright .dropdown-item:hover {
+  background-color: lightskyblue;
+}
+.header .dropmenu {
+  width: 25px;
+}
+.header .user {
+  border-radius: 100px;
+}
+header img {
+  width: 40px;
+  height: 40px;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+.headerleft .dropdown-menu-right {
+  margin-left: -30px;
+  margin-top: 10px;
+  padding-left: 0px;
+  float: left;
+  width: 300px;
+  background-color: #001f54;
+}
+
+.slide-menu {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  display: block !important;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #001f54;
+  width: 300px;
+  z-index: 1000;
+  opacity: 1;
+}
+.slide-menu.show {
+  transform: translateX(0);
+}
+#search {
+  border-radius: 5px;
+}
+#search:focus {
+  border: solid lightgreen 3px;
+  border-radius: 10px;
+  outline: none;
+}
+#search::placeholder {
+  font-style: italic;
+  position: relative;
+  left: 5px;
+}
+.headerleft .dropdown-item {
+  font-family: "Times New Roman", Times, serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  justify-items: center;
+  gap: 10px;
+  color: white;
+}
+#exit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-top-right-radius: 5px;
+}
+#exit img {
+  width: 100%;
+}
+.headerleft .dropdown-item img {
+  width: 30px;
+  float: left;
+}
+.headerleft .dropdown-item:hover {
+  background-color: lightskyblue;
+  color: black;
+}
+.headerleft .dropdown-item:focus {
+  color: black;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  background: #ffff;
+}
+form span {
+  color: red;
+}
+/* Tạo hiệu ứng cho form */
+#formadd {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin: auto;
+}
+
+form input {
+  margin: auto;
+  height: 90%;
+  width: 80%;
+  outline: black;
+  border: 2px solid;
+}
+#formadd.show {
+  max-height: 1000px;
+  opacity: 1;
+}
+.formadd {
+  position: fixed;
+  z-index: 1000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.search {
+  display: flex;
+}
+.search button img {
+  width: 30px;
+}
+.plus {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: right;
+}
+.plus button img {
+  width: 30px;
+}
+table th,
+td {
+  border: solid 1px white;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table tbody td input {
+  width: 100%;
+  text-align: center;
+}
+table tbody td .sell,
+.read {
+  width: 100px;
+}
+table td,
+th {
+  padding: 10px;
+}
+thead {
+  border: 10px;
+}
+tbody tr:hover td {
+  background-color: #e6f0ff;
+  cursor: pointer;
+}
+td {
+  background-color: lightgray;
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  #btn {
+    display: flex;
+    justify-content: center;
+  }
+  #btn button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .plus {
+    margin-top: 25px;
+  }
+}
+@media (min-width: 768px) {
+  .plus {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .search button {
+    width: 50%;
+  }
+  .plus {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .search h4 {
+    text-align: left;
+  }
+  .search .mt-4 {
+    position: relative;
+    top: 50px;
+  }
+  #btnsearch {
+    width: 120px;
+  }
+  .plus {
+    margin-top: 80px;
+    margin-bottom: -20px;
+    display: flex;
+    justify-content: right;
+  }
+  .plus button {
+    width: 120px;
+  }
+}
+#delete {
+  left: 60px;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.changebtn {
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: lightgray;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  padding: none;
+  cursor: pointer;
+}
+.changebtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.savechange {
+  width: 100%;
+}
+
+.savebtn {
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: lightgray;
+  border-radius: 10px;
+  height: 40px;
+  width: 40px;
+  padding: none;
+  cursor: pointer;
+}

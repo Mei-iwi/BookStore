@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category.css" />
+    <link rel="stylesheet" href="../css/Management.css" />
+    <link rel="stylesheet" href="../css/Support.css" />
+    <style>
+      form input {
+        height: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="headerleft">
+          <nav class="navbar bg-body-tertiary justify-content-center">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary btnMenu"
+                type="button"
+                id="dropdownMenuButton"
+                style="width: 50px; height: 50px"
+              >
+                <img src="../Images/menu.png" class="menuIcon" />
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right slide-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a class="dropdown-item" href="./index.html"
+                  ><img src="../Images/Home.png" /> TRANG CHỦ</a
+                >
+                <a class="dropdown-item" href="./login.html"
+                  ><img src="../Images/login.png" /> ĐĂNG NHẬP</a
+                >
+                <a class="dropdown-item" href="./register.html"
+                  ><img src="../Images/signin.png" /> ĐĂNG KÝ</a
+                >
+                <a class="dropdown-item" href="../html/Category.html"
+                  ><img src="../Images/books.png" /> DANH MỤC SÁCH</a
+                >
+                <a class="dropdown-item" href="./gio_hang.html" id="giohang"
+                  ><img src="../Images/cart.png" /> GIỎ HÀNG</a
+                >
+                <a class="dropdown-item" href="./Support.html"
+                  ><img src="../Images/support.png" /> LIÊN HỆ/ HỖ TRỢ</a
+                >
+                <a class="dropdown-item" href="./admin.html" id="thongke"
+                  ><img src="../Images/buyBook.png" /> Thống kê chi tiêu</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="center d-flex w-50">
+          <input
+            type="text"
+            name="searchAll"
+            id="searchAll"
+            class="w-100"
+            placeholder="Nhập thông tin cần tìm!"
+          /><button class="btn btn-secondary always-hover" id="searchBooks">
+            <img src="../Images/search.png" alt="" />
+          </button>
+        </div>
+        <div class="headerright">
+          <a href="./Support.html" id="sp">
+            <img src="../Images/question.png" />
+          </a>
+          <span id="login">
+            <nav
+              class="navbar bg-body-tertiary justify-content-center"
+              style="z-index: 1000000"
+            >
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                >
+                  Người dùng
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item text-dark" href="./admin.html"
+                    >Thông tin chi tiêu</a
+                  >
+                  <a class="dropdown-item text-dark" href="#"
+                    >Thay đổi mật khẩu</a
+                  >
+                  <a class="dropdown-item text-dark" id="logout">Đăng xuất</a>
+                </div>
+              </div>
+            </nav>
+          </span>
+          <img id="cat" class="user rounded-circle" src="../Images/cat.jpg" />
+        </div>
+      </div>
+      <div
+        style="background-color: white; z-index: 10000"
+        class="d-flex flex-column justify-content-center text-center"
+      >
+        <h1 class="mt-4">CHÚNG TÔI CÓ THỂ GIÚP GÌ CHO BẠN</h1>
+        <span>(Luôn sẵn sàn trả lời những câu hỏi của khách hàng)</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 order-2 col-md-12 order-md-2 col-lg-4 text-center">
+          <span>Liên hệ với chúng tôi</span>
+          <div class="row itemContact">
+            <span>Liên hệ với chúng tôi</span>
+            <div class="col-12 col-md-5 col-lg-12 bg-warning card">
+              <a href="https://huit.edu.vn/">
+                <table>
+                  <tr>
+                    <td>Zalo</td>
+                    <td>
+                      <img src="../Images/zalo.png" alt="" />
+                    </td>
+                  </tr>
+                </table>
+              </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-12 bg-primary card">
+              <a href="https://huit.edu.vn/">
+                <table>
+                  <tr>
+                    <td>Facebook</td>
+                    <td><img src="../Images/facebook.png" alt="" /></td>
+                  </tr>
+                </table>
+              </a>
+            </div>
+            <div
+              style="background-color: purple"
+              class="col-12 col-md-11 col-lg-12 card"
+            >
+              <a href="https://huit.edu.vn/"
+                ><table>
+                  <tr>
+                    <td>Email</td>
+                    <td><img src="../Images/email.png" alt="" /></td>
+                  </tr>
+                </table>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 order-1 col-md-12 order-md-1 col-lg-8 text-center">
+          <form class="border pl-5 pr-5 rounded">
+            <h3 class="text-danger">Ý kiến cần góp ý</h3>
+            <div class="form-group">
+              <div class="input-group mb-3 mr-sm-3">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Họ và tên khách hàng"
+                />
+              </div>
+              <div
+                class="error text-left text-danger mb-4"
+                id="errorName"
+              ></div>
+              <div class="input-group mb-3 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <img
+                      style="width: 20px"
+                      src="../Images/iconEmail.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="Email"
+                  id="Email"
+                  placeholder="Email"
+                />
+              </div>
+              <div
+                class="error text-left text-danger mb-4"
+                id="errorMail"
+              ></div>
+              <div class="input-group mb-3 mr-sm-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <img
+                      style="width: 20px; height: 20px"
+                      src="../Images/iconPhone.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <input
+                  class="form-control"
+                  type="tel"
+                  name="tel"
+                  id="tel"
+                  placeholder="Số điẹn thoại"
+                />
+              </div>
+              <div
+                class="error text-left text-danger mb-4"
+                id="errorPhone"
+              ></div>
+              <div class="input-group mb-3 w-100">
+                <label for="option" class="form-label">Chọn mục</label>
+                <select
+                  name="choose"
+                  id="choose"
+                  class="form-group w-100 rounded h-100"
+                >
+                  <option value="">-- Vui lòng chọn --</option>
+                  <option value="Sai">Sai sự thực</option>
+                  <option value="Mờ">Chữ mờ</option>
+                  <option value="Mất chữ">Mất chữ</option>
+                  <option value="Sai chính tả">Sai chính tả</option>
+                </select>
+              </div>
+              <div
+                class="error text-left text-danger mb-4"
+                id="errorselect"
+              ></div>
+              <div class="input-group mb-3 w-100">
+                <textarea
+                  placeholder="Vấn đề khác cần góp ý"
+                  class="form-group w-100"
+                  style="height: 80px"
+                ></textarea>
+              </div>
+            </div>
+            <div class="Category">
+              <button
+                type="submit"
+                class="btn btn-primary w-75 d-flex justify-content-center"
+                id="submitNow"
+              >
+                Gửi ngay
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/Management.js"></script>
+    <script src="../js/Category.js"></script>
+    <script src="../js/Support.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var user = document.getElementById("login");
+        var userLogin = JSON.parse(localStorage.getItem("userLogin") || "[]");
+
+        if (userLogin.length === 0) {
+          user.innerHTML = `
+          <div class ="d-flex text-white">
+          <div style="border-right: 1px solid white" class="pr-3" onclick="location.href = 'login.html'">
+            Đăng nhập
+          </div>
+          <div class="ml-3" onclick="location.href = 'register.html'">Đăng ký</div>
+          </div>`;
+          document.getElementById("cat").style.display = "none";
+          document.getElementById("giohang").style.display = "none";
+          document.getElementById("thongke").style.display = "none";
+          document.getElementById("sp").style.display = "none";
+        }
+      });
+      var logout = document.getElementById("logout");
+      logout.addEventListener("click", function () {
+        if (confirm("Bạn có chắc muốn đăng xuất")) {
+          localStorage.removeItem("userLogin");
+          location.reload();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/Management.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category.css" />
+
+    <style>
+      #InfoProduct td {
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #d9d9d9">
+    <header>
+      <div class="header">
+        <div class="headerleft">
+          <nav class="navbar bg-body-tertiary justify-content-center">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary btnMenu"
+                type="button"
+                id="dropdownMenuButton"
+                style="width: 50px; height: 50px"
+              >
+                <img src="../Images/menuBlack.png" class="menuIcon" />
+              </button>
+              <div
+                style="background-color: #32ade6"
+                class="dropdown-menu dropdown-menu-right slide-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a id="icon2" class="dropdown-item" href="#"
+                  ><img class="w-100" src="../Images/titleMenu.png"
+                /></a>
+                <a id="icon" class="dropdown-item" href="#"
+                  ><img src="../Images/iconbook.png" />
+                  <img src="../Images/study.png" />
+                </a>
+                <a class="dropdown-item" href="../html/admin.html"
+                  ><img src="../Images/home.png" /> TỔNG QUAN</a
+                >
+                <a class="dropdown-item" href="#item" id="Pack"
+                  ><img src="../Images/donhang.png" /> THÔNG TIN ĐƠN HÀNG</a
+                >
+                <a class="dropdown-item" href="#InfoProduct" id="product"
+                  ><img src="../Images/sanpham.png" /> SẢN PHẨM</a
+                >
+                <a class="dropdown-item" href="#layout" id="spending"
+                  ><img src="../Images/khachhang.png" /> CHI TIÊU</a
+                >
+                <a class="dropdown-item" href="#layout" id="sale"
+                  ><img src="../Images/khuyenmai.png" /> KHUYẾN MÃI</a
+                >
+                <a class="dropdown-item" href="../html/Category.html"
+                  ><img src="../Images/buy.png" /> Quay về trang mua hàng</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="center d-flex w-50">
+          <input
+            type="text"
+            name="searchAll"
+            id="searchAll"
+            class="w-100"
+            placeholder="Nhập thông tin cần tìm!"
+          /><button class="btn btn-secondary always-hover" id="searchBooks">
+            <img src="../Images/search.png" alt="" />
+          </button>
+        </div>
+        <div>
+          <button class="ml-5 btn card" id="bell">
+            <img src="../Images/bell.png" alt="" />
+          </button>
+        </div>
+        <div class="headerright">
+          <a href="./Support.html">
+            <img src="../Images/question.png" />
+            <span>Trợ giúp</span>
+          </a>
+          <img class="user rounded-circle" src="../Images/cat.jpg" />
+
+          <span id="contactAdmin"
+            >CSKH Mai Nhật Cường <br /><span style="font-style: italic"
+              >Hotline:</span
+            >
+            18001515</span
+          >
+        </div>
+      </div>
+    </header>
+    <div class="container" id="item">
+      <div class="row no-gutters" id="layout">
+        <div class="col-12 col-md-12 col-lg-8 px-4" id="right">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-12">
+              <div class="row items">
+                <div class="col-3 col-md-3 col-lg-3 item card" id="pay">
+                  <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12">
+                      Đơn hàng hôm nay
+                    </div>
+                    <div class="col-6">
+                      <img src="../Images/list.png" alt="" />
+                    </div>
+                    <div class="col-6 zero">500</div>
+                  </div>
+                </div>
+                <div
+                  class="col-3 col-md-3 col-lg-3 item card"
+                  id="InfoSpending"
+                >
+                  <div class="row">
+                    <div class="col-12">Chi tiêu hôm nay</div>
+                    <div class="col-6">
+                      <img src="../Images/bagMoney.png" alt="" />
+                    </div>
+                    <div class="col-6 zero">1 tỷ</div>
+                  </div>
+                </div>
+                <div class="col-3 col-md-3 col-lg-3 item card" id="infoSale">
+                  <div class="row">
+                    <div class="col-12">Khuyến mãi của bạn</div>
+                    <div class="col-6">
+                      <img src="../Images/human.png" alt="" />
+                    </div>
+                    <div class="col-6 zero zero-human">2</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 listItem card" id="packToday">
+              <table id="list">
+                <tr>
+                  <td><img src="../Images/moneyAdmin.png" alt="" /></td>
+                  <td><span>100</span> Đơn chưa thanh toán</td>
+                </tr>
+                <tr>
+                  <td><img src="../Images/truck.png" alt="" /></td>
+                  <td><span>100</span> Đơn chưa giao</td>
+                </tr>
+                <tr>
+                  <td><img src="../Images/bag.png" alt="" /></td>
+                  <td><span>100</span> Đơn chưa hoàn tất</td>
+                </tr>
+                <tr>
+                  <td><img src="../Images/returnMoney.png" alt="" /></td>
+                  <td><span>100</span> Đơn bị hoàn trả</td>
+                </tr>
+                <tr>
+                  <td><img src="../Images/falil.png" alt="" /></td>
+                  <td><span>100</span> Đơn bị hủy</td>
+                </tr>
+              </table>
+            </div>
+            <div class="col-12 listItem mt-4 card">
+              <span id="Adver">
+                Có thể bạn quan tâm <img src="../Images/iconsmile.png" alt=""
+              /></span>
+              <table id="ad">
+                <tr>
+                  <td><img src="../Images/houseMobile.png" alt="" /></td>
+                  <td>
+                    <h3>Bán hàng di động</h3>
+                    <p>Bán hàng mọi thứ trên nền tảng di động</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="../Images/Money.png" alt="" /></td>
+                  <td>
+                    <h3>Chi tiêu hơp lí</h3>
+                    <p>Chi tiêu không lãng phí, tích lũy tương lai</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4 px-4 mt-4 revenue card" id="left">
+          <table id="revenue">
+            <tr>
+              <td class="text-center">Tổng chi tiêu</td>
+              <td>
+                <select
+                  class="rounded w-75 h-50 text-center d-flex justify-content-center"
+                  name="doanhthu"
+                  id="doanhthu"
+                >
+                  <option value="today">Hôm nay</option>
+                  <option value="Month">Trong tháng</option>
+                  <option value="quarter">Trong quý</option>
+                  <option value="Year">Trong năm</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="chart-main border">
+                  <div class="chart" style="--percent: 35%">
+                    <div>35$</div>
+                    <div class="label"><u>T1</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 45%">
+                    <div>45$</div>
+                    <div class="label"><u>T2</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 60%">
+                    <div>60$</div>
+                    <div class="label"><u>T3</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 70%">
+                    <div>70$</div>
+                    <div class="label"><u>T4</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 40%">
+                    <div>40$</div>
+                    <div class="label"><u>T5</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 60%">
+                    <div>60$</div>
+                    <div class="label"><u>T6</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 85%">
+                    <div>85$</div>
+                    <div class="label"><u>T7</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 40%">
+                    <div>40$</div>
+                    <div class="label"><u>T8</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 60%">
+                    <div>60$</div>
+                    <div class="label"><u>T9</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 65%">
+                    <div>65$</div>
+                    <div class="label"><u>T10</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 40%">
+                    <div>40$</div>
+                    <div class="label"><u>T11</u></div>
+                  </div>
+                  <div class="chart" style="--percent: 75%">
+                    <div>75$</div>
+                    <div class="label"><u>T12</u></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table id="InfoProduct">
+            <tr>
+              <td colspan="2">
+                <em><strong>SẢN PHẨM BẠN ƯA CHUỘNG NHẤT</strong></em>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <ul>
+                  <li><p>Hóa học: 3.000 quyển</p></li>
+                  <li><p>Toán 1 tỷ quyển</p></li>
+                  <li><p>Tiếng Anh 2 quyển</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <em><strong>SẢN PHẨM ĐƯỢC BẠN THUÊ NHIỀU NHẤT </strong></em>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <ul>
+                  <li><p>Cấu trúc rời rạc: 120 lần thuê</p></li>
+                  <li><p>Toán cao cấp: 70 lần thuê</p></li>
+                  <li><p>Đại số tuyến tính: 30 lần thuê</p></li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/Management.js"></script>
+    <script src="../js/Category.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

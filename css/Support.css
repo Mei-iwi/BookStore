@@ -1,0 +1,84 @@
+.itemContact img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  float: right;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .row span {
+    display: block;
+  }
+  .itemContact span {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .row span {
+    display: block;
+  }
+  .itemContact span {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .itemContact {
+    display: flex;
+    gap: 10px;
+    position: fixed;
+    width: 400px;
+    top: 70%;
+    transform: translateY(-70%);
+  }
+  .row span {
+    display: none;
+  }
+  .itemContact span {
+    display: block;
+  }
+}
+.itemContact {
+  display: flex;
+  gap: 10px;
+}
+.itemContact div {
+  display: flex;
+  width: 10%;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+.itemContact table tr td {
+  background-color: transparent;
+  border: none;
+}
+.itemContact table tr td:first-child {
+  position: relative;
+  left: 30%;
+}
+.itemContact a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.row span {
+  font-size: 20px;
+  padding: 10px;
+  margin: auto;
+}
+.container {
+  margin-top: 50px;
+}
+form {
+  padding: 30px;
+  background-color: lightgray;
+}
+form button {
+  margin: auto;
+}
+form button:hover {
+  transition: 0.5s all ease;
+  transform: translate3d(0px, -5px, 30px);
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/Management.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category.css" />
+    <title>Quản lý tài khoản khách hàng</title>
+  </head>
+  <body>
+    <!-- Tạo form thêm thông tin khách hàng -->
+    <!-- Sừ dụng form bootstrap -->
+    <div
+      id="formadd"
+      style="display: none; margin: auto"
+      class="container formadd d-flex justify-content-center align-items-center"
+    >
+      <form
+        style="position: relative"
+        id="formCustomer"
+        class="border border-primary p-3 rounded w-75"
+        method="post"
+      >
+        <button
+          type="button"
+          class="-flex justify-content-center"
+          id="exit"
+          onclick="closeForm()"
+        >
+          <img src="../Images/exit.png" alt="" />
+        </button>
+        <h2 class="text-center text-primary">Thêm thông tin khách hàng</h2>
+        <label for="name">Họ và tên khách hàng <span>(*) </span></label
+        ><input type="text" id="name" name="name" />
+        <label for="nameLogin">Tên đăng nhập <span>(*)</span> </label
+        ><input type="text" name="nameLogin" id="nameLogin" />
+        <label for="Email">Email<span>(*) </span></label
+        ><input type="email" name="Email" id="Email" />
+        <label for="quantitysell">Số lượng mua</label
+        ><input type="number" name="quantitysell" id="quantitysell" />
+        <label for="quantityread">Số lượng sách đã đọc</label
+        ><input type="number" name="quantityread" id="quantityread" />
+        <div class="mt-2 d-flex justify-content-center">
+          <button type="submit" class="btn-primary w-25 rounded" id="btnAdd">
+            Thêm mới
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Phần tiêu đề của trang -->
+    <header>
+      <div class="header">
+        <!-- Nội dung tiêu đề bên trái của trang -->
+        <div class="headerleft">
+          <!-- Menu boostrap -->
+          <nav class="navbar bg-body-tertiary justify-content-center">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary btnMenu"
+                type="button"
+                id="dropdownMenuButton"
+                style="width: 50px; height: 50px"
+              >
+                <img src="../Images/menu.png" class="menuIcon" />
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right slide-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a class="dropdown-item" href="index.html"
+                  ><img src="../Images/Home.png" /> TRANG CHỦ</a
+                >
+                <a class="dropdown-item" href="./Category.html"
+                  ><img src="../Images/books.png" /> DANH MỤC SÁCH</a
+                >
+                <a class="dropdown-item" href="./gio_hang.html"
+                  ><img src="../Images/cart.png" /> GIỎ HÀNG</a
+                >
+
+                <a class="dropdown-item" href="./total.html"
+                  ><img src="../Images/buyBook.png" /> THỐNG KÊ DOANH THU</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- Nội dung tiêu đề bên phải -->
+        <div class="headerright">
+          <a href="./Support.html">
+            <img src="../Images/question.png" />
+            <span>Trợ giúp</span>
+          </a>
+          <span id="login">
+            <nav class="navbar bg-body-tertiary justify-content-center">
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                >
+                  Người dùng
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item text-dark" href="./total.html"
+                    >Thống kê doanh thu</a
+                  >
+                  <a class="dropdown-item text-dark" href="#"
+                    >Thay đổi mật khẩu</a
+                  >
+                  <a class="dropdown-item text-dark" id="logout">Đăng xuất</a>
+                </div>
+              </div>
+            </nav>
+          </span>
+          <img id="cat" class="user rounded-circle" src="../Images/cat.jpg" />
+        </div>
+      </div>
+    </header>
+    <!-- Phần nội dung quản lý -->
+    <div class="container">
+      <!-- Thanh tìm kiếm -->
+      <div class="search">
+        <form method="get" class="m-3 w-100">
+          <div
+            class="row d-flex d-flex flex-lg-row align-items-center text-center"
+          >
+            <div class="col-12 col-md-12 col-lg-8">
+              <h4>QUẢN LÝ TÀI KHOẢN</h4>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                class="w-100"
+                placeholder="Nhập thông tin cần tìm!"
+              />
+            </div>
+            <div class="col-12 col-md-12 col-lg-4" id="btn">
+              <div class="col-6 col-md-12 col-lg-4">
+                <!-- Nút tìm kiếm -->
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded p-1 mt-4"
+                  id="btnsearch"
+                >
+                  <img src="../Images/search.png" />Tìm kiếm
+                </button>
+              </div>
+              <!-- Nút thêm mới sẽ hiện thị form thêm mới -->
+              <div class="plus col-6 col-md-12 col-lg-12">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 rounded"
+                  onclick="onform()"
+                >
+                  <img src="../Images/plus.png" alt="" />Thêm mới
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Bảng hiện thị thông của khách hàng -->
+      <div class="d-flex justify-content-center p-4">
+        <table class="text-center" id="customerTable">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th>STT</th>
+              <th>Họ và tên</th>
+              <th>Tên đăng nhập</th>
+              <th>Email</th>
+              <th>Số sách đã mua</th>
+              <th>Số sách đã đọc</th>
+              <th>Chỉnh sửa</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="./Category.html"></script>
+    <script src="../js/Management.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var user = document.getElementById("login");
+        var userLogin = JSON.parse(localStorage.getItem("userLogin") || "[]");
+
+        if (userLogin.length === 0) {
+          user.innerHTML = `
+          <div class ="d-flex text-white">
+          <div style="border-right: 1px solid white" class="pr-3" onclick="location.href = 'login.html'">
+            Đăng nhập
+          </div>
+          <div class="ml-3" onclick="location.href = 'register.html'">Đăng ký</div>
+          </div>`;
+          document.getElementById("cat").style.display = "none";
+          document.getElementById("giohang").style.display = "none";
+          document.getElementById("thongke").style.display = "none";
+          document.getElementById("sp").style.display = "none";
+        }
+      });
+      var logout = document.getElementById("logout");
+      logout.addEventListener("click", function () {
+        if (confirm("Bạn có chắc muốn đăng xuất")) {
+          localStorage.removeItem("userLogin");
+          location.href = "./Category.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category1.css" />
+    <link rel="stylesheet" href="../css/MainPage.css" />
+  </head>
+  <body>
+    <div id="formadd" class="formadd" style="z-index: 10000">
+      <form method="post">
+        <div class="container m-3">
+          <h2 class="text-primary text-center">Thêm vào giỏ hàng ngay</h2>
+          <div
+            class="row w-100 d-flex justify-content-center align-items-center border"
+          >
+            <div
+              class="col-6 col-md-8 col-lg-6 p-3 d-flex align-items-center justify-content-center"
+            >
+              <img
+                class="w-50"
+                id="formpicture"
+                src="../Images/dnt.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 border p-4 w-100">
+              <h3 id="title">Tên sách:</h3>
+              <h4 id="price">Giá:</h4>
+              <table class="">
+                <tr>
+                  <td>
+                    <label for="select">Chọn loại sách </label>
+                  </td>
+                  <td>
+                    <select id="select" class="rounded">
+                      <option value="book">Sách bản chính</option>
+                      <option value="papper">Sách bản in</option>
+                      <option value="photo">Sách photo</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="number">Chọn số lượng </label></td>
+                  <td>
+                    <input
+                      class="w-75"
+                      type="number"
+                      name="number"
+                      value="1"
+                      id="number"
+                      min="1"
+                      oninput="updateTotal()"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="sum">Tổng tiền </label></td>
+                  <td>
+                    <input
+                      class="w-75"
+                      type="text"
+                      name="sum"
+                      id="sum"
+                      readonly
+                    />
+                    VNĐ
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div
+              class="col-12 col-md-12 col-lg-12 align-items-center justify-content-center border text-right p-2"
+            >
+              <button
+                type="button"
+                id="closeButton"
+                onclick="closeForm()"
+                class="btn btn-danger"
+              >
+                Hủy
+              </button>
+              <button type="submit" id="addNow" class="btn btn-success">
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+   <header>
+      <div class="header w-100">
+        <div class="headerleft">
+          <nav class="navbar bg-body-tertiary justify-content-center">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary btnMenu"
+                type="button"
+                id="dropdownMenuButton"
+              >
+                <img src="../Images/menu.png" class="menuIcon"/>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right slide-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a class="dropdown-item" href="#"
+                  ><img src="../Images/Home.png" /> TRANG CHỦ</a
+                >
+                <a class="dropdown-item" href="./html/login.html"
+                  ><img src="../Images/login.png" /> ĐĂNG NHẬP</a
+                >
+                <a class="dropdown-item" href="./html/register.html"
+                  ><img src="../Images/signin.png" /> ĐĂNG KÝ</a
+                >
+                <a class="dropdown-item" href="../html/Category.html"
+                  ><img src="../Images/books.png" /> DANH MỤC SÁCH</a
+                >
+                <a class="dropdown-item" href="./htmlgio_hang.html" id="giohang"
+                  ><img src="../Images/cart.png" /> GIỎ HÀNG</a
+                >
+                <a class="dropdown-item" href="./html/Support.html"
+                  ><img src="../Images/support.png" /> LIÊN HỆ/ HỖ TRỢ</a
+                >
+                <a class="dropdown-item" href="../html/admin.html" id="thongke"
+                  ><img src="../Images/buyBook.png" /> Thống kê chi tiêu</a
+                >
+                 <a class="dropdown-item" href="./html/admin.html" id="Management"
+                  ><img src="../Images/buyBook.png" /> Quản lý khách hàng</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="center d-flex w-50 text-center align-items-center">
+          <strong style="font-size: 25px;" class="text-white text-center">EBOOK ĐỌC VÀ THUÊ SÁCH ONLINE</strong>
+        </div>
+        <div class="headerright">
+          <a href="./html/Support.html" id="sp">
+            <img src="../Images/question.png" />
+            <span>Trợ giúp</span>
+          </a>
+          <span id="login">
+            <nav class="navbar bg-body-tertiary justify-content-center" style="z-index: 1000000;">
+              <div class="dropdown">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                >
+                  Người dùng
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item text-dark" href="./html/admin.html"
+                    >Thông tin chi tiêu</a
+                  >
+                  <a class="dropdown-item text-dark" href="#"
+                    >Thay đổi mật khẩu</a
+                  >
+                  <a class="dropdown-item text-dark" id="logout">Đăng xuất</a>
+                </div>
+              </div>
+            </nav>
+          </span>
+          <img id="cat" class="user rounded-circle" src="../Images/cat.jpg" />
+        </div>
+      </div>
+
+    </header>
+    <!-- thanh tìm kiếm -->
+    <div class="baoboc">
+      <div class="row">
+        <div class="col-2 col-md-4 col-lg-2 ebook" id="ebook">
+          <img src="/Images/logoMainPage.png" />
+        </div>
+        <div class="col-8 col-md-4 col-lg-8 ogiua">
+          <input type="text" name="search" placeholder="Nhập sách cần tìm"  id="searchAll"/>
+          <button class="btn btn-outline-success" type="button" id="searchBooks"   >
+            <img src="/Images/searchblack.png" />
+          </button>
+        </div>
+        <div onclick="location.href = './html/gio_hang.html'" 
+          class="col-2 col-md-4 col-lg-2 d-flex justify-content-center align-items-center"
+        >
+          <strong class="ml-2" id="cart">
+            <img src="/Images/mdi_cart-outline.png" />GIỎ HÀNG</strong
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Banner -->
+    <!-- container bự -->
+    <div>
+      <!-- Bộ 3 cái quảng cáo -->
+        <div class="col-12 col-md-12 col-lg-12 container-fluid mb-3 border" style="background-color: whitesmoke;">
+          <div
+            id="basicCarousel"
+            class="carousel slide bg"
+            data-ride="carousel"
+            data-interval="3000"
+          >
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li
+                data-target="#basicCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#basicCarousel" data-slide-to="1"></li>
+              <li data-target="#basicCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../Images/bg-1.jpg"
+                  class="d-block w-100 img-fluid"
+                  alt="Slide 1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../Images/bg-2.jpg"
+                  class="d-block w-100 img-fluid"
+                  alt="Slide 2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../Images/bg-3.jpg"
+                  class="d-block w-100 img-fluid"
+                  alt="Slide 3"
+                />
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <a
+              class="carousel-control-prev"
+              href="#basicCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#basicCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div
+            class="w-75"
+            style="
+              border: 2px solid blue;
+              border-radius: 10px;
+              text-align: center;
+              font-size: 15px;
+            "
+          >
+            <img src="" />
+            <strong class="bigfont">ƯU ĐÃI HẤP DẪN</strong>
+          </div>
+        </div>
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div
+            style="
+              border: 2px solid blue;
+              border-radius: 10px;
+              text-align: center;
+            "
+            class="w-75"
+          >
+            <strong class="bigfont"> KHUYẾN MÃI HẤP DẪN</strong>
+          </div>
+        </div>
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div
+            style="
+              border: 2px solid blue;
+              border-radius: 5px;
+              text-align: center;
+            "
+            class="w-75"
+          >
+            <strong class="bigfont">HOTLINE:0375638470</strong>
+          </div>
+        </div>
+      </div>
+      <!-- sach bán chạy đồ đó -->
+      <div class="row">
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div id="newbook" class="ml-5 mt-5">
+            <spapn style="border: 0px" class="bg-white" id="mnc">
+              <strong class="smallfont">Sách mới</strong>
+            </spapn>
+          </div>
+        </div>
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div class="mt-5 ml-5" id="bestseller">
+            <span style="border: none" clasids="bg-white" id="lcq">
+              <strong class="smallfont">sách bán chạy </strong>
+            </span>
+          </div>
+        </div>
+        <div
+          class="col-4 col-md-4 col-lg-4 d-flex justify-content-center align-items-center"
+        >
+          <div class="ml-5 mt-5" id="hotbook">
+            <span id="nph" class="bg-white" style="border: 0px">
+              <strong class="smallfont">sách nổi bật</strong>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- 8 cái hình -->
+
+      <div class="container">
+        <div class="row">
+          <!-- hình 1-->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-2" id="sp1">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/annoi.jpg" class="img-fluid mb-3" />
+                <p class="card-text">Khéo ăn khéo nói được thiên hạ</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/annoi.jpg','Khéo ăn khéo nói có được thiên hạ','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 2 -->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-2" id="sp2">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/dnt.jpg" class="img-fluid mb-3" />
+                <p class="card-text">Đắc Nhân Tâm</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/dnt.jpg','Đắc Nhân Tâm','50000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 3 -->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-1" id="sp3">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/kt.jpg" class="img-fluid mb-3" />
+                <p class="card-text">Cách vận hành nền kinh tế</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/kt.jpg', 'Cách nền kinh tế vận hành','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 4 -->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-4" id="sp4">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/rung.jpg" class="img-fluid mb-3" />
+                <p class="card-text">Khu rừng kỳ diệu</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/rung.jpeg','Khu rừng kỳ diệu','50000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <!-- hình 5-->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-3" id="sp5">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/tv1.jpeg" class="img-fluid mb-3" />
+                <p class="card-text">Tiếng Việt lớp 1</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/tv1.jpeg','Tiếng Việt lớp 1','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 6 -->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-1" id="sp6">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/kts.jpg" class="img-fluid mb-3" />
+                <p class="card-text">Kinh Tế Số</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/kts.jpg','Kinh Tế Số','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 7 -->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-3" id="sp7">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/nguphapnhat.jpeg" class="img-fluid mb-3" />
+                <p class="card-text">Ngữ Pháp Nhật Bản</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/nguphapnhat.jpeg','Kinh tế số','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- hình 8-->
+          <div class="col-6 col-md-4 col-lg-3 mt-4 card_Main card-3" id="sp8">
+            <div class="card">
+              <div class="card-header bg-secondary text-white">Khuyến mãi</div>
+              <div class="card-body">
+                <img src="../Images/ta.jpeg" class="img-fluid mb-3" />
+                <p class="card-text">Tiếng Anh</p>
+              </div>
+              <div
+                class="card-footer d-flex justify-content-between align-items-center"
+              >
+                <span class="fw-bold">500.000đ</span>
+                <button
+                  type="button"
+                  onclick="onformHtml('../Images/ta.jpeg','Tiếng Anh','500000')"
+                  class="btn btn-sm btn-success"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footter -->
+    <footer>
+      <div class="row">
+        <div class="col-2 col-md-2 col-lg-1">
+          <img src="../Images/logo.png" alt="" />
+        </div>
+        <div class="col-4 col-md-6 col-lg-6">
+          <p>Liên hệ với chúng tôi ngay</p>
+          <p>Địa chỉ: 140 Lê Trọng Tấn, phường Tây Thạnh, Tân Phú, TP.HCM</p>
+          <p>Hotline: 180001515</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-5">
+          <!--<img src="../Images/ct.png" alt="">--><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0573850970686!2d106.6260261731699!3d10.806916958634368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752be2853ce7cd%3A0x4111b3b3c2aca14a!2zMTQwIMSQLiBMw6ogVHLhu41uZyBU4bqlbiwgVMOieSBUaOG6oW5oLCBUw6JuIFBow7osIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1749452903541!5m2!1svi!2s"
+            width="%"
+            height="100%"
+            style="border: 0; float: right"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/Management.js"></script>
+   
+    <script>
+      const sp1 = document.getElementById("sp1");
+      const sp2 = document.getElementById("sp2");
+      const sp3 = document.getElementById("sp3");
+      const sp4 = document.getElementById("sp4");
+      const sp5 = document.getElementById("sp5");
+      const sp6 = document.getElementById("sp6");
+      const sp7 = document.getElementById("sp7");
+      const sp8 = document.getElementById("sp8");
+      document.getElementById("lcq").addEventListener("click", function () {
+        sp1.style.display = "none";
+        sp2.style.display = "block";
+        sp3.style.display = "block";
+        sp4.style.display = "none";
+        sp5.style.display = "none";
+        sp6.style.display = "none";
+        sp7.style.display = "none";
+        sp8.style.display = "none";
+      });
+      document.getElementById("mnc").addEventListener("click", function () {
+        sp1.style.display = "block";
+        sp2.style.display = "block";
+        sp3.style.display = "block";
+        sp4.style.display = "block";
+        sp5.style.display = "block";
+        sp6.style.display = "block";
+        sp7.style.display = "block";
+        sp8.style.display = "block";
+      });
+      document.getElementById("nph").addEventListener("click", function () {
+        sp1.style.display = "block";
+        sp2.style.display = "block";
+        sp3.style.display = "block";
+        sp4.style.display = "none";
+        sp5.style.display = "none";
+        sp6.style.display = "none";
+        sp7.style.display = "none";
+        sp8.style.display = "none";
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+  var user = document.getElementById("login");
+  var userLogin = localStorage.getItem("userLogin");
+
+  if (userLogin === null) {
+    user.innerHTML = `
+          <div class ="d-flex text-white">
+          <div style="border-right: 1px solid white" class="pr-3" onclick="location.href = './html/login.html'">
+            Đăng nhập
+          </div>
+          <div class="ml-3" onclick="location.href = './html/register.html'">Đăng ký</div>
+          </div>`;
+    document.getElementById("cat").style.display = "none";
+    document.getElementById("giohang").style.display = "none";
+    document.getElementById("thongke").style.display = "none";
+    document.getElementById("sp").style.display = "none";
+    document.getElementById("cart").style.display = "none";
+   
+    
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var managementElement = document.getElementById("Management");
+  var userEmail = localStorage.getItem("userLogin");
+  console.log(userEmail)
+  if (userEmail === "c2005vn@gmail.com") {
+    managementElement.style.display = "block";
+  } else {
+    managementElement.style.display = "none";
+  }
+});
+
+var logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
+  if (confirm("Bạn có chắc muốn đăng xuất")) {
+    localStorage.removeItem("userLogin");
+    location.reload();
+  }
+});
+    </script>
+    <script src="../js/MainPage.js"></script>
+  </body>
+</html>

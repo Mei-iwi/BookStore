@@ -1,0 +1,229 @@
+﻿.table1 th:first-child {
+  border-right: solid white 5px;
+  text-align: left;
+}
+.table1 {
+  padding: 15px;
+}
+.table1 th {
+  padding: 20px;
+  font-size: 25px;
+}
+.chiadoi {
+  background-color: #007aff;
+  color: white;
+  display: flex;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #007aff;
+}
+
+.cangiua {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+h2 {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.ebook img {
+  width: 100px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-around;
+}
+.baoboc {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 100px;
+}
+.baoboc img {
+  height: 100%;
+}
+/*.row{
+    display:flex; 
+    justify-content:center;
+    justify-items:center;
+}*/
+.ogiua {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.ogiua input {
+  width: 60%;
+  height: 41px;
+  border-radius: 10px 0px 0px 10px;
+}
+.ogiua button img {
+  width: 50%;
+  height: 50%;
+}
+.ogiua button {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.bigfont {
+  font-size: 15px;
+}
+
+.smallfont {
+  font-size: 20px;
+}
+.baoboc2 {
+  background-color: #474747;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #ffff;
+}
+form span {
+  color: red;
+}
+/* Tạo hiệu ứng cho form */
+#formadd {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  margin: auto;
+}
+
+form input {
+  margin: auto;
+  height: 90%;
+  width: 80%;
+  outline: black;
+  border: 2px solid;
+}
+#formadd.show {
+  max-height: 1000px;
+  opacity: 1;
+}
+.formadd {
+  position: fixed;
+  z-index: 1000000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slide-menu {
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  display: block !important;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #001f54;
+  width: 300px;
+  z-index: 1000;
+  opacity: 1;
+}
+.slide-menu.show {
+  transform: translateX(0);
+}
+.headerleft .dropdown-menu-right {
+  margin-left: -30px;
+  margin-top: 10px;
+  padding-left: 0px;
+  float: left;
+  width: 300px;
+  background-color: #001f54;
+}
+.dropdown-item:hover {
+  background-color: lightskyblue;
+}
+.menuIcon {
+  transition: all ease 0.5s;
+}
+.btnMenu:hover .menuIcon {
+  transform: rotate(-180deg);
+}
+#ebook {
+  width: 90%;
+}
+#newbook,
+#bestseller,
+#hotbook {
+  cursor: pointer;
+}
+.header {
+  position: sticky;
+  top: 0px;
+  z-index: 100000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: blue;
+  padding: 5px 10px;
+}
+.header button {
+  background-color: blue;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .headerright {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
+  margin-right: 10px;
+}
+.header .headerright a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.headerright .dropdown-item:hover {
+  background-color: lightskyblue;
+}
+.header .dropmenu {
+  width: 25px;
+}
+.header .user {
+  border-radius: 100px;
+}
+header img {
+  width: 40px;
+  height: 40px;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+.headerleft .dropdown-menu-right {
+  margin-left: -30px;
+  margin-top: 10px;
+  padding-left: 0px;
+  float: left;
+  width: 300px;
+  background-color: #001f54;
+}
+.headerleft .dropdown-item {
+  font-family: "Times New Roman", Times, serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  justify-items: center;
+  gap: 10px;
+  color: white;
+}

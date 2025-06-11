@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/Management.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/Category.css" />
+    <link rel="stylesheet" href="../css/ReadOnline.css" />
+
+    <title>Read Online</title>
+  </head>
+  <body>
+    <div id="formadd2" class="formadd thanks">
+      THANK YOU SO MUCH
+      <img src="../Images/smile.png" alt="" />
+    </div>
+    <div id="formadd" class="formadd text-center">
+      <button type="button" onclick="closeForm()" id="cancel">
+        <img src="../Images/cancel.png" alt="" />
+      </button>
+      <div id="rating" style="width: 300px">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+      <button id="sendRating" class="btn btn-success">Gửi đánh giá</button>
+    </div>
+    <header id="focus">
+      <div class="header">
+        <div class="headerleft">
+          <nav class="navbar bg-body-tertiary justify-content-center">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary btnMenu"
+                type="button"
+                id="dropdownMenuButton"
+                style="width: 50px; height: 50px"
+              >
+                <img src="../Images/menu.png" class="menuIcon" />
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right slide-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a class="dropdown-item" href="./Management.html"
+                  ><img src="../Images/Home.png" /> TRANG CHỦ</a
+                >
+                <a class="dropdown-item" href="./login.html"
+                  ><img src="../Images/login.png" /> ĐĂNG NHẬP</a
+                >
+                <a class="dropdown-item" href="./register.html"
+                  ><img src="../Images/signin.png" /> ĐĂNG KÝ</a
+                >
+                <a class="dropdown-item" href="../html/Category.html"
+                  ><img src="../Images/books.png" /> DANH MỤC SÁCH</a
+                >
+                <a class="dropdown-item" href="./gio_hang.html" id="giohang"
+                  ><img src="../Images/cart.png" /> GIỎ HÀNG</a
+                >
+                <a class="dropdown-item" href="./Support.html"
+                  ><img src="../Images/support.png" /> LIÊN HỆ/ HỖ TRỢ</a
+                >
+                <a class="dropdown-item" href="./admin.html" id="thongke"
+                  ><img src="../Images/buyBook.png" /> Thống kê chi tiêu</a
+                >
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="headerright">
+          <a href="#" onclick="onform()">
+            <img src="../Images/star.png" />
+            <span>Đánh giá sách</span>
+          </a>
+          <span>
+            <a href="./Support.html">
+              <img src="../Images/warning.png" />
+              <span>Thông báo lỗi</span>
+            </a>
+          </span>
+          <span>
+            <a href="./Detail.html">
+              <img src="../Images/return.png" />
+              <span>Trở lại</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </header>
+    <div id="RouteLeft">
+      <button id="btnChangeLeft" class="rounded-circle bg-white">
+        <img class="rounded-circle" src="../Images/leftRoll.png" alt="" />
+      </button>
+    </div>
+    <div id="RouteRight">
+      <button id="btnChangeRight" class="rounded-circle bg-white">
+        <img class="rounded-circle" src="../Images/rightRoll.png" alt="" />
+      </button>
+    </div>
+    <div id="container" class="container mt-4">
+      <div class="row">
+        <div class="col-lg-2 order-lg-1"></div>
+        <div
+          id="ct"
+          style="text-align: justify"
+          class="col-12 order-2 col-md-12 order-md-2 col-lg-8 order-lg-2 border rounded bg-white"
+        >
+          <h2 id="titleText" class="text-center">Tiêu đề ở đây</h2>
+          <p id="content"></p>
+        </div>
+        <div class="col-12 order-1 col-md-12 order-md-1 col-lg-2 order-lg-3">
+          <div id="buttonControll" class="w-50 mt-4">
+            <button id="light" class="rounded-circle bg-white">
+              <img class="rounded-circle" src="../Images/light.png" alt="" />
+            </button>
+            <button id="plus" class="rounded-circle bg-white">
+              <img class="rounded-circle" src="../Images/plus2.png" alt="" />
+            </button>
+            <button id="minus" class="rounded-circle bg-white">
+              <img
+                class="rounded-circle img-fluid"
+                src="../Images/minus.png"
+                alt=""
+              />
+            </button>
+            <button id="flag" class="rounded-circle bg-warning">
+              <img class="rounded-circle" src="../Images/flag.png" alt="" />
+            </button>
+            <button id="round" class="rounded-circle bg-white">
+              <img class="rounded-circle" src="../Images/round.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/Management.js"></script>
+    <script src="../js/ReadOnline.js"></script>
+    <script src="../js/text.js"></script>
+  </body>
+</html>
